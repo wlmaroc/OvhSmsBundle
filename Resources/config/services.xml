@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="wlmaroc_ovh.api" class="Ovh\Api">
+            <argument>%wlmaroc_ovh.application_key%</argument>
+            <argument>%wlmaroc_ovh.application_secret%</argument>
+            <argument>%wlmaroc_ovh.endpoint_name%</argument>
+            <argument>%wlmaroc_ovh.consumer_key%</argument>
+        </service>
+
+        <service id="ovh" alias="wlmaroc_ovh.api" />
+    </services>
+
+</container>
